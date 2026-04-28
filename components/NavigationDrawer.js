@@ -7,7 +7,8 @@ import { useAppContext } from '../context/AppContext';
 export default function NavigationDrawer() {
   const { isNavOpen, setIsNavOpen, selectedCategory, setSelectedCategory } = useAppContext();
 
-  const categories = ['전체', '테크니컬 아우터', '헤리티지 데님', '액세서리'];
+  // DB의 category 컬럼 값과 정확히 일치하도록 영문으로 변경
+  const categories = ['전체', 'Outerwear', 'Denim', 'Accessories'];
 
   const handleCategoryClick = (category) => {
     setSelectedCategory(category);
