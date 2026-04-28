@@ -13,6 +13,7 @@ export default function ProductCard({ product }) {
         className={styles.imageWrapper}
         initial={{ scale: 0.8, opacity: 0 }}
         whileInView={{ scale: 1, opacity: 1 }}
+        whileHover={{ scale: 1.05 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         viewport={{ once: false, amount: 0.5 }}
       >

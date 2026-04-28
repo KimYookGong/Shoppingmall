@@ -4,11 +4,13 @@ import { ShoppingBag, Menu } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { supabase } from '../lib/supabase';
+import { useAppContext } from '../context/AppContext';
 import styles from './Header.module.css';
 
 export default function Header() {
   const [session, setSession] = useState(null);
   const router = useRouter();
+  const { setIsNavOpen, setIsCartOpen } = useAppContext();
 
   useEffect(() => {
     // Check current session
@@ -34,7 +36,7 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.leftNav}>
-        <button className={styles.iconBtn}>
+        <button className={styles.iconBtn} onClick={() => setIsNavOpen(true)}>
           <Menu size={24} color="#e0e0e0" />
         </button>
       </div>
@@ -52,7 +54,7 @@ export default function Header() {
         ) : (
           <Link href="/login" className={styles.authLink}>로그인</Link>
         )}
-        <button className={styles.iconBtn}>
+        <button className={styles.iconBtn} onClick={() => setIsCartOpen(true)}>
           <ShoppingBag size={24} color="#e0e0e0" />
         </button>
       </div>
