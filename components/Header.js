@@ -8,7 +8,7 @@ export default function Header() {
       <button className={styles.iconBtn}>
         <Menu size={24} color="#e0e0e0" />
       </button>
-      <div className={styles.logo}>ANTIGRAVITY</div>
+      <div className={styles.logo}>SIXZERO</div>
       <button className={styles.iconBtn}>
         <ShoppingBag size={24} color="#e0e0e0" />
       </button>

@@ -43,13 +43,30 @@
   margin-top: 20vh; /* Push down towards the bottom */
 }
 
+.headerRow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
 .category {
   font-size: 0.8rem;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: var(--color-accent);
-  margin-bottom: 1rem;
-  display: block;
+}
+
+.price {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
+  backdrop-filter: blur(5px);
+  letter-spacing: 1px;
 }
 
 .title {
@@ -66,8 +83,31 @@
   font-size: 1rem;
   line-height: 1.6;
   color: #a0a0a0;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   font-weight: 300;
+}
+
+.metaRow {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1rem 0;
+}
+
+.metaLabel {
+  font-size: 0.7rem;
+  color: #888;
+  letter-spacing: 1px;
+}
+
+.metaValue {
+  font-size: 0.9rem;
+  color: #ddd;
+  font-weight: 500;
+  margin-left: 0.3rem;
 }
 
 .buyBtn {
@@ -113,6 +153,33 @@
 .buyBtn:hover .btnGlow {
   opacity: 1;
   animation: rotate 4s linear infinite;
+}
+
+.buyBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.buyBtn:disabled:hover {
+  transform: none;
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.soldOutBadge {
+  position: absolute;
+  top: 3rem;
+  right: -3rem;
+  background: rgba(255, 50, 50, 0.8);
+  color: white;
+  padding: 0.5rem 4rem;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 3px;
+  z-index: 5;
+  transform: rotate(45deg);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 @keyframes rotate {
